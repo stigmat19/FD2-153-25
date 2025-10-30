@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function summ(x) {
+            var a = 5
+
+            return x + 5;
+        }
+
+        const summ1 = x => x + x
+
+        const a = summ(5);
+
+        const arr = [1, 2, 3].map((value, index) => {
+            console.log("value", value);
+            console.log('Index', index);
+            console.log('========');
+
+            return value * value;
+        })
+
+        // const getYearDays2 = year => year % 4 == 0 ? 366 : 365
+        var a1 = 10;
+
+        function fact1(n) {
+            var a1 = 5
+
+            let f = 1;
+            for (let i = 2; i <= n; i++)
+                f *= i;
+            return f;
+        }
+        console.log(a1)
+        fact1(5)
+
+        for (let i = 0; i < 5; i++) {
+            setTimeout(() => {
+                console.log(i)
+            }, 1000)
+        }
+        console.log("Hello")
+
+        (function() {
+
+            var a = 5;
+
+            function f(b) {
+                console.log("a=" + a + " b=" + b);
+            }
+
+            f(7);
+
+        })();
+
+        (function() {
+
+            var a = 5;
+
+            function f(b) {
+                console.log("a=" + a + " b=" + b);
+            }
+
+            f(7);
+
+        })();
+
+        function superPuperFunc() {
+            alert("hello")
+        }
+    </script>
+
+</body>
+
+</html>
