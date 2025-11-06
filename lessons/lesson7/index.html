@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #app {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius ex quos praesentium. Reiciendis sed eaque maxime, minima, placeat nostrum iste assumenda aperiam labore, ducimus pariatur voluptates vel rem nobis asperiores?</p>
+
+    <div id="app"></div>
+    <script>
+        const beatles = {
+            name: 'Beatles',
+            members: ['McCartney', 'Lennon', 'Harrison', 'Starr'],
+            albums: [{
+                name: 'Please Please Me',
+                year: 1963
+            }, {
+                name: 'With The Beatles',
+                year: 1963
+            }, {
+                name: "A Hard Day's Night",
+                year: 1964
+            }]
+        };
+
+        beatles.albums
+
+        for (let k in beatles) {
+            // console.log('k', k);
+            if (k === 'albums') {
+                // for (let i = 0; i < beatles[k].length; i++) {
+
+                // }
+
+                for (let obj of beatles[k]) {
+                    // console.log(obj.name)
+                }
+            }
+        }
+
+        let myBoard = [
+            ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+            ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+            ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+            ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+            ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+            ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+            ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+            ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
+        ];
+
+
+        const user = {
+            name: "Ivan",
+            age: 25,
+            gender: 'M',
+            name: "Petr",
+        }
+
+        const values = [55, 77, 55, 66, 77];
+        let used = {}; // ключ хэша - число, которое уже встречалось
+        for (let i = 0; i < values.length; i++) {
+            const value = values[i]; // очередное значение
+            if (value in used) // встречалось ли оно?
+                continue; // если да - всё, берём следующее
+            used[value] = true; // если нет - запоминаем, что это значение уже встречалось
+            // console.log(value); // выводим его в консоль
+        }
+        const arr = []
+        for (let k in used) {
+            arr.push(+k)
+        }
+
+        function message(txt, options) {
+            options = options || {};
+            let header = options.header || 'ВНИМАНИЕ!';
+            let count = options.count || 1;
+
+            // console.log(header);
+            for (let i = 1; i <= count; i++)
+                console.log(i + " " + txt);
+        }
+
+        // message("Hello")
+
+
+        function colorCode(colorName) {
+            const colors = {
+                red: '#dc4848',
+                green: '#00FF00',
+                blue: '#0000FF',
+                black: '#252525',
+                white: '#FFFFFF'
+            };
+            return colors[colorName];
+        }
+
+        const app = document.getElementById('app')
+        app.style.background = colorCode('red')
+
+
+        const bmw = {
+            model: 5,
+            year: 2023,
+            color1: colorCode('black'),
+            color2: colorCode('black'),
+            color3: colorCode('black'),
+            color4: colorCode('black'),
+            color5: colorCode('black'),
+            color6: colorCode('black'),
+        }
+
+        console.log('-----before delete key', bmw);
+
+        delete bmw.year;
+
+        console.log('-----after delete key', bmw);
+
+        const a = [2, 3, 5];
+        const a2 = [2, 3, 5];
+    </script>
+</body>
+
+</html>

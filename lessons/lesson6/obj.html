@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = new Object()
+        const obj1 = {
+            name: 'Test',
+            age: 25
+        }
+
+        const userStatus = 'Classic'
+
+        const statuses = {
+            cardClassic: 'Classic',
+            cardGold: 'Gold'
+        }
+
+        const users = [{
+            lastname: "Ivanov",
+            name: "Ivan",
+            age: 25,
+        }, {
+            name: "Petr",
+            age: 30,
+            lastname: "Petrov",
+        }, {
+            age: 35,
+            name: "Olga",
+            lastname: "Morozova",
+        }]
+
+
+        function getUserData(users) {
+            for (let i = 0; i < users.length; i++) {
+                for (let key in users[i]) {
+                    console.log(`key: ${key}, value: ${users[i][key]}`);
+
+                }
+                console.log('========')
+            }
+        }
+
+        getUserData(users)
+
+        // console.log(`lastName: ${user1.lastname}, firstName: ${user1.name}, age: ${user1.age}`)
+    </script>
+</body>
+
+</html>

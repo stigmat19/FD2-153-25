@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const count1 = 10
+        const count2 = 20
+
+        const arr = new Array(1, 2, 3, 4, 5)
+        const arr1 = [1, 2, 3, 4, 5]
+        const arr2 = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+
+        const a = ["Hello", true, 1, undefined]
+        const b = a;
+
+        for (let i = 0; i < a.length; i++) {
+            console.log(a[i])
+        }
+
+        const user1 = ["Ivanov", "Ivan", 25]
+        const user2 = ['Petrov', 'Petr', 30]
+        const user3 = ['Morozova', 'Olga', 35]
+        const user4 = ['Sidr', 27, 'Sidorov']
+
+        function getUserData(user) {
+            console.log(`lastName: ${user[0]}, firstName: ${user[1]}, age: ${user[2]}`)
+        }
+
+        getUserData(user1)
+        getUserData(user2)
+    </script>
+
+</body>
+
+</html>
