@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        console.log('1')
+        try {
+            console.log(a);
+        } catch (e) {
+            console.log('error111', e.message)
+        }
+        console.log('2')
+
+
+        function test(param1, param2) {
+            if (typeof param1 === 'string' && typeof param2 === 'string') {
+                console.log(`Hello: ${param1}`)
+                console.log(`Hello: ${param2}`)
+
+                return;
+            }
+
+            console.log(param1 + param2)
+        }
+
+        test("Petr", "Sidr")
+        test(5, 10)
+    </script>
+</body>
+
+</html>

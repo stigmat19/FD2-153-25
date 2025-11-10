@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // es5
+        function Door(type) {
+            let height = 2000
+            let width = 900
+
+            this.locked = true
+            this.type = type
+
+            this.getHeight = function() {
+                console.log(`height: ${height}`)
+            }
+        }
+
+
+        const woodenDoor = new Door('wood');
+        const plasticDoor = new Door('plastic');
+
+        // es6
+        class Food {
+            constructor(isSalt = true) {
+                this.isSalt = isSalt
+            }
+
+            ingridients = ['meat', 'potate', 'salad']
+
+            weight = 200
+
+            getIngridients = () => {
+                console.log('Ingridients', this.ingridients)
+            }
+        }
+
+        const pasta1 = new Food();
+        const pasta2 = new Food(false);
+    </script>
+</body>
+
+</html>
