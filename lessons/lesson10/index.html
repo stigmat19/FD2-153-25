@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // const count = parseInt(prompt())
+
+        // const cars = [{
+        //     model: 'bmw',
+        //     price: 10000,
+        // }, {
+        //     model: 'audi',
+        //     price: 15000,
+        // }, {
+        //     model: 'mers',
+        //     price: 20000,
+        // }]
+
+        // const filteredCars = cars.filter((car) => {
+        //     return car.price >= count
+        // })
+
+        // console.log(filteredCars)
+
+        const aaa = [{
+            type: "ADT",
+            age: 20
+        }, {
+            type: "CHD",
+            age: 10
+        }, {
+            type: "CHD",
+            age: 13
+        }]
+
+        const arr = [1, 2, 3, 4, 5]
+
+        const result = arr.reduce((acc, value) => {
+            // console.log('----acc', acc)
+            // console.log('-----value', value)
+
+            return acc + value
+        }, 0)
+
+
+        function Test() {
+            let name = "Test"
+
+            this.hello = function() {
+                console.log('----name', name)
+            }
+        }
+
+        const obj = {
+            aaa: 'aaa111',
+            bbb: 'bbb111'
+        }
+
+
+        function compareFIO(a, b) {
+            if (a.fio < b.fio) return -1;
+            if (a.fio > b.fio) return 1;
+            return 0;
+        }
+        let m = [{
+            fio: 'Иванов',
+            zp: 1000
+        }, {
+            fio: 'Егоров',
+            zp: 850
+        }, {
+            fio: 'Сидоров',
+            zp: 1100
+        }, {
+            fio: 'Сидоров',
+            zp: 1200
+        }, {
+            fio: 'Петров',
+            zp: 800
+        }];
+    </script>
+</body>
+
+</html>
