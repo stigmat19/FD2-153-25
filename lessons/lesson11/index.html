@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        "use strict"
+
+        function Book(name, author, year, countPage) {
+            const test = 'Hello'
+            const self = this;
+
+            self.name = name;
+            self.author = author;
+            self.year = year;
+            self.countPage = countPage;
+
+            self.read = function() {
+                console.log('----111', self)
+            }
+        }
+
+        const harryPotter = new Book('Harry Potter', 'Rouling', 2001, 500)
+            // harryPotter.read()
+        const lordOfTheRing = new Book('Frodo', 'Rouling', 2005, 550)
+        lordOfTheRing.read()
+
+        const test = lordOfTheRing.read
+        test()
+
+        function getUserData() {
+            console.log('-----this', this);
+        }
+        // getUserData()
+    </script>
+
+</body>
+
+</html>
