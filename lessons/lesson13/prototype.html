@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function User(name) {
+            this.name = name
+
+            let a = 5
+
+            this.walk = function() {
+                console.log('is walk')
+            }
+        }
+
+        User.prototype.run = function() {
+            console.log('is walk 111')
+        }
+
+        User.prototype.a = "Hello"
+
+        User.sayHello = function() {
+            console.log('Hello')
+        }
+
+        const Ivan = new User("Ivan")
+        const Petr = new User("Petr")
+        const Sidr = new User("Sidr")
+
+        const num1 = 'aaaa'
+        const num2 = 'aaaa'
+
+        const obj = {
+            name: "Test",
+            age: 25
+        }
+
+        const obj1 = obj
+
+        function Contract(name) {
+            this.name = name
+            this.duration = 3
+        }
+
+        function Deposit(name) {
+            this.get = function() {
+                console.log('get')
+            }
+        }
+
+        function Credit(name) {
+            this.set = function() {
+                console.log('set')
+            }
+        }
+
+
+
+        // class Deposit extends Contract {
+
+        // }
+    </script>
+
+</body>
+
+</html>

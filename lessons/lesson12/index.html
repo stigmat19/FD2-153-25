@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        const app = document.getElementById('app')
+        const user = {
+            name: 'Ivan',
+            age: 25
+        }
+
+        console.log('----user1: ' + user)
+
+        function User(_name) {
+            this.name = _name
+        }
+
+        class User1 {
+            constructor(_name) {
+                this.name = _name
+            }
+
+            read() {
+                console.log('user is read')
+            }
+
+            // read = () => {
+            //     console.log('user is read')
+            // }
+        }
+
+        const user1 = new User1("Test");
+
+        function ff(a, b) {
+            console.log(a + " " + b);
+            console.log(this);
+            console.log(this.c);
+        }
+        ff(3, 4)
+        const hh = {
+            c: 77
+        };
+        const bb = {
+            c: 88
+        };
+
+        const aa = {
+            c: 100
+        }
+        ff.call(hh, 5, 6)
+        console.log('============')
+        ff.call(bb, 10, 20)
+
+        const ff2 = ff.bind(aa)
+
+        // $('#app')
+        //     .animate()
+        //     .delay(3000)
+        //     .addClass('Active')
+
+        const resultArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            .filter(num => num % 2 === 0)
+            .map(num => num * num)
+
+        function test(a, b) {
+
+        }
+
+        test(5 + 10, 20 + 30)
+
+        function Wrapper(prefix, postfix) {
+
+            this.prefix = prefix;
+            this.postfix = postfix;
+
+            this.wrap = function(texts) {
+                let s = "";
+                for (let i = 0; i < texts.length; i++)
+                    s += this.prefix + texts[i] + this.postfix;
+                return s;
+            }
+
+        }
+
+        const h1 = new Wrapper('<h1>', '</h1>');
+        const pTag = new Wrapper('<p>', '</p>');
+        app.innerHTML = h1.wrap(["Hello"])
+        app.innerHTML += app.innerHTML + pTag.wrap(["world"])
+    </script>
+
+</body>
+
+</html>

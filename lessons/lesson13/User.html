@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        class User {
+            constructor(name) {
+                this.name = name
+            }
+
+            run() {
+                console.log('is run')
+            }
+
+            walk = () => {
+                console.log('is walk')
+            }
+
+            static test111() {
+                console.log('is test')
+            }
+        }
+
+        const Zhenya = new User('Zhenya')
+        const Pavel = new User('Pavel')
+    </script>
+
+</body>
+
+</html>

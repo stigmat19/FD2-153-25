@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let a = 3
+
+        function Car(brand) {
+            const self = this;
+            let a = 5
+            this.b = 'Hello'
+            this.brand = brand
+
+            this.run = function() {
+                console.log(a)
+            }
+
+            this.test = function() {
+                console.log('this', self)
+            }
+        }
+        console.log('-----1')
+        const bmw = new Car('BMW')
+        const aaa = bmw.test;
+
+        console.log('-----2')
+    </script>
+
+</body>
+
+</html>
