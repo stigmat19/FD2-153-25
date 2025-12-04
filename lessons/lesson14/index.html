@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        const user = {
+            name: "Ivan",
+            age: 25,
+            dog: {
+                name: "Jessy",
+                age: 3
+            }
+        }
+
+        const user1 = {
+            name: "Ivan",
+            age: 25,
+            dog: {
+                name: "Jessy",
+                age: 3
+            }
+        }
+
+        // const name = "Ivan"
+
+
+        // const user3 = {
+        //     name
+        // }
+
+        const {
+            x,
+            y,
+            ...z
+        } = {
+            x: 11,
+            y: 12,
+            a: 13,
+            b: 14,
+            name: "Test"
+        };
+
+        class Car {
+            constructor() {
+                    this.property = 1;
+                }
+                // прототип
+            method1() {
+                    console.log('method1')
+                }
+                // статический, вызываем через класс Car.method2
+            static method2() {
+                    console.log('method2')
+                }
+                // публичный метод который копируется в инстанс
+            method3 = () => {
+                console.log('method3')
+            }
+            static property3 = 3;
+        }
+
+        const bmw = new Car()
+        const mers = new Car()
+    </script>
+</body>
+
+</html>
