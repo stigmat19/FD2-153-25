@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+label span {
+  display: inline-block;
+  width: 100px;
+}
+
+.form-wrapper {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.img-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.img-wrapper img {
+  width: 80px;
+}
+
+#app {
+  display: flex;
+  gap: 20px;
+}/*# sourceMappingURL=style.css.map */

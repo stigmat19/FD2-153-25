@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+    <style>
+        .active {
+            background-color: aqua;
+        }
+        
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="app" class="active aaa" style="color: red;">Test</div>
+
+    <div>
+        <ul>
+            <li class="a">
+                <a href="">
+                    <span>Hello1</span>
+                </a>
+            </li>
+            <li class="a">
+                <a href="">
+                    <span>Hello2</span>
+                </a>
+            </li>
+            <li class="a">
+                <a href="">
+                    <span>Hello3</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        const app = document.querySelectorAll('#app');
+        const li = document.getElementsByClassName('a');
+        const links = document.getElementsByTagName('a');
+
+        const arr = new Array(1, 2, 3, 4, 5)
+    </script>
+</body>
+
+</html>
