@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        li:first-child {
+            background-color: red;
+        }
+        
+        ul:first-child {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>Hello1</li>
+        <li>Hello2</li>
+        <li>Hello3</li>
+    </ul>
+
+    <ul>
+
+
+
+        <li>Hello1</li>
+        <li>Hello2</li>
+        <li>Hello3</li>
+    </ul>
+
+    <form id="form1" name="form1">
+
+        <input type="text">
+    </form>
+
+    <form id="form2">
+        <input type="text" name="test">
+    </form>
+
+    <script>
+        const forms = document.forms
+        const form2 = forms.form2
+        const inputs = form2.elements
+        const ul = document.querySelectorAll('ul')
+        const textAreaText = document.createTextNode("Hello")
+        const textArea = document.createElement("textarea")
+        textArea.appendChild(textAreaText)
+        textArea.id = 'test'
+        form2.appendChild(textArea)
+    </script>
+</body>
+
+</html>
