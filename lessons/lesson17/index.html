@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            height: 10000px;
+        }
+        
+        ul {
+            background-color: aqua;
+        }
+        
+        li:first-child {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <form action="https://fe.it-academy.by/TestForm.php" method="post" name="form1">
+        <input type="text" name="firstname">
+        <button type="submit">send</button>
+    </form>
+
+    <ul id="ul">
+        <li data-id="1">1</li>
+        <li data-id="2">2</li>
+        <li data-id="3">3</li>
+    </ul>
+
+    <script>
+        const form = document.forms.form1;
+        const btn = form.querySelector('button');
+        const firstnameInput = form.querySelector('[name="firstname"]');
+        const ul = document.querySelector('#ul');
+        const li = document.querySelectorAll('li');
+
+        ul.addEventListener('click', (e) => {
+            // console.log('----ul currentTarget', e.currentTarget);
+            console.log('----ul target', e.target);
+
+        })
+
+        ul.addEventListener('mousemove', (e) => {
+            // console.log('----ul currentTarget', e.currentTarget);
+            console.log('----ul clientX', e.clientX);
+            console.log('----ul clientY', e.clientY);
+
+        })
+
+        // console.log('----li', li);
+
+        li[0].addEventListener('click', (e) => {
+            event.stopPropagation()
+                // console.log('----li currentTarget', e.currentTarget);
+            console.log('----li target', e.target);
+        })
+
+        // btn.addEventListener('click', (event) => {
+        //     console.log('----btn currentTarget', event.currentTarget)
+        //     console.log('----btn target', event.target)
+        // })
+
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (event.target.elements[0].value) {
+                event.target.submit()
+            } else {
+                alert('Введите данные')
+            }
+        })
+    </script>
+
+</body>
+
+</html>

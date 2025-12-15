@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black
+        }
+        
+        .item {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            position: relative;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <input type="text">
+
+    <p contenteditable="true"></p>
+
+    <div class="item"></div>
+
+    <script>
+        const input = document.querySelector('input')
+        const p = document.querySelector('p')
+        const item = document.querySelector('.item')
+
+        p.addEventListener('keydown', (e) => {
+            console.log('test', e.target.innerText)
+        })
+
+        let x = 0
+        let y = 0
+
+        window.addEventListener('keydown', (e) => {
+
+            switch (e.keyCode) {
+                case 65:
+                    x -= 10
+                    item.style.left = x + 'px'
+                    break;
+                case 87:
+                    y -= 10
+                    item.style.top = y + 'px'
+                    break;
+                case 83:
+                    y += 10
+                    item.style.top = y + 'px'
+                    break;
+                case 68:
+                    x += 10
+                    item.style.left = x + 'px'
+                    break;
+            }
+        })
+
+        input.addEventListener('input', (e) => {
+            console.log('-----change', e.target.value)
+        })
+    </script>
+</body>
+
+</html>

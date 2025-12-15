@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .item1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 50px;
+        }
+        
+        .item2 {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="item1"></div>
+    <div class="item2" draggable="true"></div>
+
+    <script>
+        const item1 = document.querySelector('.item1')
+        const item2 = document.querySelector('.item2')
+
+        item2.addEventListener('dragstart', (e) => {
+            console.log('dragstart')
+        })
+        item2.addEventListener('drag', (e) => {
+            // console.log('drag')
+        })
+        item2.addEventListener('dragend', (e) => {
+            console.log('dragend')
+        })
+        item1.addEventListener('dragenter', (e) => {
+            console.log('dragenter')
+        })
+        item1.addEventListener('dragover', (e) => {
+            e.preventDefault()
+                // console.log('dragover')
+        })
+        item1.addEventListener('dragleave', (e) => {
+            console.log('dragleave')
+        })
+        item1.addEventListener('drop', (e) => {
+            console.log('drop', e)
+            e.target.innerHTML += 1
+        })
+    </script>
+
+</body>
+
+</html>
