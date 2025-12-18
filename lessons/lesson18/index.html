@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            transition: .5s;
+            position: relative;
+            top: 0;
+            left: 0;
+            animation: Blabla infinite 3s;
+        }
+        
+        div:hover {
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+        
+        @keyframes Blabla {
+            from {
+                background-color: red;
+            }
+            50% {
+                background-color: green;
+            }
+            to {
+                background-color: blue;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div></div>
+
+    <form name="form1" action="https://fe.it-academy.by/TestForm.php" method="post">
+        <input type="text">
+        <input type="submit">
+    </form>
+
+    <p>click</p>
+
+    <a href="#sdsds">sdsds</a>
+    <a href="#asasa">asasa</a>
+
+    <script>
+        const form = document.forms.form1;
+        form.action = "Hello"
+
+        const inp = document.querySelector('input')
+        const p = document.querySelector('p');
+        // p.onclick = (e) => {
+        //     console.log('click new test', e)
+        // }
+
+        form.addEventListener('submit', (e) => {
+            console.log('----1', e)
+            e.preventDefault()
+        }, false)
+
+        function test() {
+            console.log('click test')
+        }
+
+        const handler = () => {
+            console.log('event')
+
+            p.removeEventListener('click', handler)
+            console.log('111')
+        }
+        p.addEventListener('click', handler)
+
+
+
+        inp.addEventListener('blur', () => {
+            console.log('--blur')
+            if (inp.value === '') {
+                alert('Hello')
+            }
+        })
+        inp.addEventListener('focus', () => {
+            console.log('--focus')
+        })
+
+        window.addEventListener('hashchange', () => {
+            console.log('link is changed')
+        })
+    </script>
+</body>
+
+</html>

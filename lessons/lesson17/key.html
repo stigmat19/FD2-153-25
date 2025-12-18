@@ -25,6 +25,11 @@
 
 
 <body>
+    <p></p>
+
+    <form action="">
+        <input type="submit" value="">
+    </form>
     <input type="text">
 
     <p contenteditable="true"></p>
@@ -43,31 +48,68 @@
         let x = 0
         let y = 0
 
-        window.addEventListener('keydown', (e) => {
-
-            switch (e.keyCode) {
-                case 65:
-                    x -= 10
-                    item.style.left = x + 'px'
-                    break;
-                case 87:
-                    y -= 10
-                    item.style.top = y + 'px'
-                    break;
-                case 83:
-                    y += 10
-                    item.style.top = y + 'px'
-                    break;
-                case 68:
-                    x += 10
-                    item.style.left = x + 'px'
-                    break;
-            }
+        window.addEventListener('keypress', (e) => {
+            console.log('----e.keyCode', e.keyCode);
+            console.log('----e.charCode', e.charCode);
+            console.log('----e.which', e.which);
+            console.log('----e.key', e.key);
         })
+
+        // window.addEventListener('keydown', (e) => {
+        //     console.log('----e.keyCode', e.keyCode);
+        //     console.log('----e.charCode', e.charCode);
+        //     console.log('----e.which', e.which);
+        //     console.log('----e.key', e.key);
+        //     switch (e.keyCode) {
+        //         case 65:
+        //             x -= 10
+        //             item.style.left = x + 'px'
+        //             break;
+        //         case 87:
+        //             y -= 10
+        //             item.style.top = y + 'px'
+        //             break;
+        //         case 83:
+        //             y += 10
+        //             item.style.top = y + 'px'
+        //             break;
+        //         case 68:
+        //             x += 10
+        //             item.style.left = x + 'px'
+        //             break;
+        //     }
+        // })
 
         input.addEventListener('input', (e) => {
             console.log('-----change', e.target.value)
         })
+
+
+        img.onTest = function() {
+            console.log(this)
+        }
+
+        img.onTest()
+
+        const family = {
+            parent: {
+                type: 'Father',
+                sleep: function() {
+                    console.log(this)
+                },
+                children: {
+                    type: 'daughter',
+                    sleep: function() {
+                        console.log(this)
+                    },
+                }
+            }
+        }
+
+        family.parent.sleep()
+        family.parent.children.sleep()
+        const sleep = family.parent.children.sleep
+        sleep()
     </script>
 </body>
 
