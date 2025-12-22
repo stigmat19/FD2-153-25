@@ -37,9 +37,12 @@
         item2.addEventListener('drag', (e) => {
             // console.log('drag')
         })
-        item2.addEventListener('dragend', (e) => {
+        const cb = (e) => {
             console.log('dragend')
-        })
+            item2.removeEventListener('dragend', cb)
+        }
+        item2.addEventListener('dragend', cb)
+
         item1.addEventListener('dragenter', (e) => {
             console.log('dragenter')
         })

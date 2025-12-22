@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .shadow {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        
+        .modal {
+            background-color: aliceblue;
+            top: 10%;
+            right: 10%;
+            bottom: 10%;
+            left: 10%;
+            position: absolute;
+        }
+        
+        .open {
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <button class="open">open</button>
+
+    <div class="shadow">
+        <button class="close">close</button>
+        <div class="modal"></div>
+    </div>
+
+    <script>
+        aaa()
+
+        alert('Hello')
+        const openButton = document.querySelector('.open');
+        const closeButton = document.querySelector('.close');
+        const shadow = document.querySelector('.shadow');
+        const modal = document.querySelector('.modal')
+        openButton.addEventListener('click', (e) => {
+            shadow.classList.add('open')
+        })
+        closeButton.addEventListener('click', (e) => {
+            shadow.classList.remove('open')
+        })
+        shadow.addEventListener('click', (e) => {
+            // if (e.target.className !== 'modal') {
+            //     e.currentTarget.classList.remove('open')
+            // }
+
+            e.currentTarget.classList.remove('open')
+        })
+        modal.addEventListener('click', (e) => {
+            e.stopPropagation()
+        })
+    </script>
+</body>
+
+</html>
