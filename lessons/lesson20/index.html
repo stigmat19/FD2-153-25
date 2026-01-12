@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        function aaa(x) {
+            return x + 10
+        }
+
+        function test(y) {
+            return aaa(y)
+        }
+
+        const a = test(5)
+
+
+        el.addEventListener('click', (eo) => {
+            console.log(eo)
+        })
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.2.2/EventEmitter.min.js">
+    </script>
+
+    <input type=button value='сменить погоду' onclick='weather.change()'>
+    <br /><br />
+    <img id=IWeather>
+    <br />
+    <hr><br />
+    <img id=ICat width=190>
+
+    <script>
+        // поток событий с информацией о погоде
+        const weatherEvents = new EventEmitter();
+
+        function Weather() {
+            const self = this;
+
+            self.num = 1; // погода: 1=солнце 2=дождь
+
+            self.change = function() {
+
+                self.num = 3 - self.num; // меняем на противоположную
+
+                self.update();
+
+                // широковещательное событие EventWeatherChanged
+                // с информацией о погоде
+                weatherEvents.emit('EventWeatherChanged', {
+                    weathernum: self.num
+                });
+            }
+
+            self.update = function() {
+                const weatherElem = document.getElementById('IWeather');
+                weatherElem.src = 'Examples/weather/' +
+                    ((self.num == 1) ? 'weather_sun.jpg' : 'weather_rain.jpg');
+            }
+
+        }
+
+        const weather = new Weather;
+        weather.update();
+
+        function Cat() {
+            const self = this;
+
+            self.state = -1; // состояние: 11=загар 12=зонтик
+
+            self.checkWeather = function(eo) {
+                console.log('Кот узнал, что новая погода: ' + eo.weathernum);
+                self.state = eo.weathernum + 10;
+                self.update();
+            }
+
+            self.update = function() {
+                const catElem = document.getElementById('ICat');
+                catElem.src = 'Examples/weather/' +
+                    ((self.state == 11) ? 'cat_sun.jpg' : 'cat_rain.jpg');
+            }
+
+        }
+
+        const cat = new Cat;
+        // checkWeather ожидает номер погоды в свойстве weathernum
+        // аргумента; передадим, пусть думает что это объект события
+        cat.checkWeather({
+            weathernum: weather.num
+        });
+        weatherEvents.addListener('EventWeatherChanged', cat.checkWeather);
+    </script>
+</body>
+
+</html>

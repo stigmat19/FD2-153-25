@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>stop</button>
+
+    <script>
+        const btn = document.querySelector('button')
+
+        console.log('1')
+
+        for (let i = 0; i < 5; i++) {
+            console.log(i)
+        }
+        console.log('------ 2')
+
+        let count = 0
+
+        const timerId1 = setInterval(() => {
+            console.log('timer')
+                // count++
+                // if (count > 10) {
+                //     clearInterval(timerId1)
+                // }
+        }, 1000)
+        btn.addEventListener('click', () => {
+            clearInterval(timerId1)
+        })
+
+        console.log('4')
+    </script>
+</body>
+
+</html>
