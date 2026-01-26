@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        const user = {
+            name: "Test",
+            age: 25
+        }
+
+        const json = JSON.stringify(user)
+        const parseJson = JSON.parse(json, (key, value) => {
+            if (key === 'name') {
+                return `Hello ${value}`
+            }
+
+            return value
+        })
+
+
+
+        let beatles = {
+            name: 'Beatles',
+            members: ['McCartney', 'Lennon', 'Harrison', 'Starr'],
+            albums: [{
+                name: 'Please Please Me',
+                year: 1963
+            }, {
+                name: 'With The Beatles',
+                year: 1963
+            }, {
+                name: "A Hard Day's Night",
+                year: 1964
+            }]
+        };
+
+        const obj = {
+            name: 'adasa',
+            age: 25
+        }
+
+        const {
+            name: myName,
+            age
+        } = obj;
+    </script>
+
+</body>
+
+</html>
