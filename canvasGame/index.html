@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Квадрат на Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+            background: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let square = {
+            x: 400,
+            y: 300,
+            size: 40,
+            speed: 5
+        };
+
+        const keys = {
+            ArrowLeft: false,
+            ArrowRight: false,
+            ArrowUp: false,
+            ArrowDown: false
+        };
+
+        document.addEventListener('keydown', (e) => {
+            if (keys.hasOwnProperty(e.code)) {
+                e.preventDefault();
+                keys[e.code] = true;
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            if (keys.hasOwnProperty(e.code)) {
+                keys[e.code] = false;
+            }
+        });
+
+        function drawSquare() {
+            ctx.fillStyle = '#ff4444';
+            ctx.fillRect(square.x, square.y, square.size, square.size);
+
+            // Граница
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(square.x, square.y, square.size, square.size);
+        }
+
+        function update() {
+            if (keys.ArrowLeft && square.x > 0) square.x -= square.speed;
+            if (keys.ArrowRight && square.x < canvas.width - square.size) square.x += square.speed;
+            if (keys.ArrowUp && square.y > 0) square.y -= square.speed;
+            if (keys.ArrowDown && square.y < canvas.height - square.size) square.y += square.speed;
+        }
+
+        function gameLoop() {
+            ctx.clearRect(0, 0, 800, 600);
+            update();
+            drawSquare();
+            requestAnimationFrame(gameLoop);
+        }
+
+        gameLoop();
+    </script>
+</body>
+
+</html>
