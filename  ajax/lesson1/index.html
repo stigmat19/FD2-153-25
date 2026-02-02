@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" name="firstname">
+    <button class="save">save</button>
+    <button class="read">read</button>
+
+    <script src='https://fe.it-academy.by/JQ/jquery.js'></script>
+    <script>
+        const url = 'https://fe.it-academy.by/AjaxStringStorage2.php';
+        const firstname = document.querySelector('[name=firstname]');
+        const saveBtn = document.querySelector('button.save');
+        const readBtn = document.querySelector('button.read');
+        const requestName = 'YauheniVaitsiakhovich';
+
+
+        saveBtn.addEventListener('click', () => {
+            $.ajax(url,
+                {
+                    type: 'POST', dataType: 'text', data: { f: 'INSERT', n: requestName, v: firstname.value },
+                    success: saveSuccessHandler, error: errorHandler
+                }
+            );
+        })
+
+        const saveSuccessHandler = (data) => {
+            console.log('----data', data)
+        }
+
+        const sp = new URLSearchParams();
+        sp.append('f', 'READ');
+        sp.append('n', requestName);
+
+
+
+        const options = { method: 'POST', body: sp }
+
+        readBtn.addEventListener('click', () => {
+            fetch(url, options)
+                .then(response => response.json())
+                .then(data => console.log('-----data', data.result))
+                .catch((err) => console.log(err))
+            // $.ajax(url,
+            //     {
+            //         type: 'POST', dataType: 'text', data: { f: 'READ', n: requestName },
+            //         success: readSuccessHandler, error: errorHandler
+            //     }
+            // );
+        })
+
+        const readSuccessHandler = (data) => {
+            console.log('----data', JSON.parse(data).result)
+        }
+
+
+        const errorHandler = (jqXHR, statusStr, errorStr) => {
+            console.error(statusStr + ' ' + errorStr);
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

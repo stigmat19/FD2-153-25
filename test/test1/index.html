@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        //1. В чем разница между null и undefined?
+        // const data = undefined;
+
+        let data = {
+            name: 'sdsds',
+            children: [
+                {
+                    name: '111',
+                },
+                {
+                    name: '222',
+                }
+            ]
+        }
+
+        // if (!!data) {
+        //     console.log(data.children[0])
+        // }
+
+        // !!data && console.log(data.children[0])
+
+        // console.log('----test')
+
+        // data = null
+
+        //2. Для чего используется оператор "&&"?
+        // t && t -> t
+        // f && t -> f
+        // t && f -> f
+        // f && f -> f
+
+        // t || t -> t
+        // f || t -> t
+        // t || f -> t
+        // f || f -> f
+
+        //4. Является ли использование унарного плюса (оператор "+") самым быстрым способом преобразования строки в число?
+        // const num = 5
+        // console.time('ttt')
+        //     + num
+        // console.timeEnd('ttt')
+        // console.time('eee')
+        // Number(num)
+        // console.timeEnd('eee')
+
+        // const user = {
+        //     name: "Ivan"
+        // }
+
+        // function sayHello() {
+        //     console.log("Hello " + this.name)
+        // }
+
+        // const newF = sayHello.bind(user)
+        // const newF1 = sayHello.bind(user)
+
+        // sayHello()
+
+        // newF()
+        // newF1()
+
+        //32. Что такое функции высшего порядка(Higher Order Functions) ?
+
+        // function ttt(num1, num2) {
+        //     return num1 + num2
+        // }
+
+        // function eee(num1, num2) {
+        //     return num1 * num2
+        // }
+
+        // function higherOrderFunction(param1, param2, callback) {
+        //     return `Result: ${callback(param1, param2)}`
+        // }
+
+        // const res1 = higherOrderFunction(5, 10, ttt)
+        // const res2 = higherOrderFunction(5, 10, eee)
+
+        // [1, 2, 3, 4].reduce((acc, v) => acc += v);
+
+        // 38. Как создать объект, не имеющий прототипа?
+        function Car(a = 5) {
+            this.run = function () {
+                console.log('run')
+            }
+        }
+
+        Car.prototype.test = function () {
+            console.log('hello')
+        }
+
+
+        const a = new Car()
+        const b = new Car()
+
+        // {...a}
+        // [...a]
+
+    </script>
+
+</body>
+
+</html>
